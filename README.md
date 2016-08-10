@@ -75,7 +75,7 @@ When you installed your local Codefolio API project you would have renamed the *
 ## <a name="guide6">6 - Configure Codefolio for production
 
 ##### CONFIG
-When you installed your local Codefolio project you would have renamed ***cf.config.js.example*** to ***cf.config.js*** and copied the API_KEY value from your Codefolio API .env file. For production make sure you edit the API_PROD_URL with your production node server URL eg. ***http://your-production-api-node-server.com:8080***
+When you installed your local Codefolio project you would have copied the API_KEY value from your Codefolio API .env file to ***config.js***. For production make sure you edit the API_PROD_URL with your production node server URL eg. ***http://your-production-api-node-server.com:8080***
 
 ## <a name="guide7">7 - Production server requirements
 
