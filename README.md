@@ -183,7 +183,7 @@ The scope of this guide is currently limited to publishing your Codefolio to a s
 
 27. Now open your Codefolio by loading your domain in a browser:
 	```http://my-prod-server.com```
-
+  
 28. To use the CMS remember to first register your administrator:
 	```http://my-prod-server.com/register```
 
