@@ -91,98 +91,125 @@ The scope of this guide is currently limited to publishing your Codefolio to a s
 > TIP: For my production server I created an [AWS EC2](https://aws.amazon.com/ec2/) instance with an [AWS Route 53](https://aws.amazon.com/route53/) domain name connected to an [AWS Elastic IP](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html).
 
 1. SSH into your production server as a sudo user:
-	`$ ssh yourusername@yourprodserver`
+
+  `$ ssh yourusername@yourprodserver`
 
 2. Install git if you haven't done so previously:
-	`$ apt-get install git`
+
+  `$ apt-get install git`
 
 3. Install Apache if you haven't done so previously:
-	`$ sudo apt install apache2`
+
+  `$ sudo apt install apache2`
 
 4. Go your home user directory, mine is named ubuntu but for the rest of this guide we will call it username, make sure you insert your actual user folder name for these commands:
-	`$ cd /home/yourusername`
+
+  `$ cd /home/yourusername`
 
 5. Clone or FTP your Codefolio API repo (here I am using the project repo on github so from here on our API directory will be called **codefolio-api**):
-	`$ git clone https://github.com/msmfsd/codefolio-api.git`
+
+  `$ git clone https://github.com/msmfsd/codefolio-api.git`
 
 6. You should now have your API code deployed to **/home/yourusername/codefolio-api/**
 
 7. If your production server does not have Node & NPM then install them:
-	`$ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -`
-	`$ sudo apt-get install -y nodejs`
+
+  `$ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -`
+
+  `$ sudo apt-get install -y nodejs`
 
 8. Now install MongoDB v3+ for Ubuntu 14 by following the official Mongo guide: https://docs.mongodb.com/v3.0/tutorial/install-mongodb-on-ubuntu/
 
 9. Ensure MongoDB service is started:
-	`$ sudo service mongod start`
+
+  `$ sudo service mongod start`
 
 10. Move into your API directory:
-	`$ cd /home/yourusername/codefolio-api`
+
+  `$ cd /home/yourusername/codefolio-api`
 
 11. Install project dependencies:
-	`$ npm install`
+
+  `$ npm install`
 
 12. You could now just run **node server.js** to fire up the API though I highly recommend you install [pm2](http://pm2.keymetrics.io/docs/usage/quick-start/ "pm2") to manage that for us and ensure node is always running:
-	`$ sudo npm install pm2@latest -g`
+
+  `$ sudo npm install pm2@latest -g`
 
 13. Now tell pm2 to start the server, monitor it and restart it if needed:
-	`$ pm2 startup`
+
+  `$ pm2 startup`
 
 14. Test your API is up and running by loading your domain server + our Node port eg. http://my-prod-server.com:8080. It should return:
-	`{"success":true,"message":"API"}`
+
+  `{"success":true,"message":"API"}`
 
 15. OK the API is complete!! Lets get the static Codefolio website/CMS uploaded to connect to that API - create a sites folder to house it:
-	`$ mkdir /home/yourusername/sites`
+
+  `$ mkdir /home/yourusername/sites`
 
 16. Go to the that directory:
-	`$ cd /home/yourusername/sites`
+
+  `$ cd /home/yourusername/sites`
 
 17. If you haven't already then create your Codefolio production build on your local machine by running `npm run build` - that will create a **dist** folder ready for deploying.
 
 18. Upload that entire ***dist*** folder via FTP or git to your production server's sites folder we just created. So the root folder for your Codefolio site will now be **/home/yourusername/sites/dist**
 
 18. Now we need to point Apache to that location to serve the static files - usually it will be pointing to /var/www/html or some other directory. Open your Apache sites default config file:
-	`$ vim /etc/apache2/sites-available/000-default.conf`
+
+  `$ vim /etc/apache2/sites-available/000-default.conf`
 
 19. Edit the file - first by replacing the DocumentRoot line with the folling line:
-	`DocumentRoot /home/yourusername/sites/dist`
+
+  `DocumentRoot /home/yourusername/sites/dist`
 
 20. And second by pasting the following code before the closing VirtualHost tag:
-	`<Directory /home/yourusername/sites/dist>
+	```
+  <Directory /home/yourusername/sites/dist>
 	      Options Indexes FollowSymLinks MultiViews
 	      AllowOverride All
 	      Order allow,deny
 	      allow from all
-	</Directory>`
+	</Directory>
+  ```
 
 21. Save and close the config file.
 
 22. To allow full application routing, browser refresh and direct page loads of projects via HTML5 browser history and React Router we need to add a .htaccess file to your folio sites root folder:
-	`$ vim /home/yourusername/sites/dist/.htaccess`
+
+  `$ vim /home/yourusername/sites/dist/.htaccess`
 
 23. Paste the following into that newly created .htaccess file:
-	`RewriteEngine on
+
+  ```
+  RewriteEngine on
 	RewriteBase /
 	RewriteRule ^index\.html$ - [L]
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteRule . /index.html [L]`
+	RewriteRule . /index.html [L]
+  ```
 
 24.  Save and close the .htaccess file.
 
 25. We now need to enable Apache mod_rewrite:
-	`$ sudo a2enmod rewrite`
-	`$ sudo service apache2 restart`
+
+  `$ sudo a2enmod rewrite`
+
+  `$ sudo service apache2 restart`
 
 26. You may need to restart the API node process via pm2:
-	`$ cd /home/yourusername/codefolio-api`
-	`$ pm2 restart all`
 
-27. Now open your Codefolio by loading your domain in a browser: `http://my-prod-server.com`
+  `$ cd /home/yourusername/codefolio-api`
 
-28. To use the CMS remember to first register your administrator: `http://my-prod-server.com/register`
+  `$ pm2 restart all`
 
-28. Finally edit your folio by logging in to the admin: `http://my-prod-server.com/login`
+27. Now open your Codefolio by loading your domain in a browser: [http://my-prod-server.com](http://my-prod-server.com)
+
+28. To use the CMS remember to first register your administrator: [http://my-prod-server.com/register](http://my-prod-server.com/register)
+
+28. You can now edit your production folio by logging in to the admin: [http://my-prod-server.com/login](http://my-prod-server.com/login)
 
 ## <a name="guide9">9 - Technology credits
 
