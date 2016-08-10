@@ -1,4 +1,6 @@
-# ![alt text](https://raw.githubusercontent.com/msmfsd/es2015-example/master/cf-logo%402x.png "Codefolio") <a name="apiguide"></a>Codefolio + Codefolio API Guide
+![alt text](https://raw.githubusercontent.com/msmfsd/es2015-example/master/cf-logo%402x.png "Codefolio")
+
+# <a name="apiguide"></a>Codefolio + Codefolio API Guide
 
  1. [Project overview](#guide1)
  2. [Install Codefolio API locally](#guide2)
