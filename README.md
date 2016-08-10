@@ -1,5 +1,7 @@
 ## <a name="apiguide"></a>Codefolio + Codefolio API Guide
 
+![alt text](https://github.com/msmfsd/codefolio-guide/cf-logo@2x.png "Codefolio")
+
  1. [Project overview](#guide1)
  2. [Install Codefolio API locally](#guide2)
  3. [Install Codefolio locally](#guide3)
