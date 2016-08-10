@@ -156,12 +156,12 @@ The scope of this guide is currently limited to publishing your Codefolio to a s
 	</Directory>
 	```
 
- 21. Save and close the config file.
+21. Save and close the config file.
 
- 22. To allow full application routing, browser refresh and direct page loads of projects via HTML5 browser history and React Router we need to add a .htaccess file to your folio sites root folder:
+22. To allow full application routing, browser refresh and direct page loads of projects via HTML5 browser history and React Router we need to add a .htaccess file to your folio sites root folder:
 	```$ vim /home/yourusername/sites/dist/.htaccess```
 
- 23. Paste the following into that newly created .htaccess file:
+23. Paste the following into that newly created .htaccess file:
 	```
 	RewriteEngine on
 	RewriteBase /
