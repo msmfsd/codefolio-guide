@@ -10,8 +10,6 @@
  8. [Publish your folio to production server (Linux)](#guide8)
  9. [Technology credits](#guide9)
 
-![alt text](http://msmfsd.com/cf-logo@2x.png "Codefolio") ![alt text](http://msmfsd.com/cf-api-logo@2x.png "Codefolio")
-
 ## <a name="guide1">1 - Project overview
 Codefolio project is an open source build-your-own folio website & CMS for developers to showcase their skills and work. It is an online CV heavily skewed towards developers with features such as:
 
