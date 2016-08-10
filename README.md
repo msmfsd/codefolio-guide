@@ -176,7 +176,7 @@ The scope of this guide is currently limited to publishing your Codefolio to a s
 
 26. You may need to restart the API node process via pm2:
 	`$ cd /home/yourusername/codefolio-api`
-	`$ pm2 startup`
+	`$ pm2 restart all`
 
 27. Now open your Codefolio by loading your domain in a browser: `http://my-prod-server.com`
 
