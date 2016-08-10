@@ -10,7 +10,7 @@
  8. [Publish your folio to production server (Linux)](#guide8)
  9. [Technology credits](#guide9)
 
-### <a name="guide1">1 - Project overview
+## <a name="guide1">1 - Project overview
 Codefolio project is an open source build-your-own folio website & CMS for developers to showcase their skills and work. It is an online CV heavily skewed towards developers with features such as:
 
 #### Codefolio API
@@ -45,17 +45,17 @@ The API and front-end application are separated for a few reasons:
 **To publish your folio to a production server you will need some experience with server admin. On steps 5 to 8 this guide documents deploying to a single Linux server with Node running on port 8080 and Apache running on default port 80. You could easily deploy to many other server configurations like publishing your API to a Heroku Node dyno and your static frontend to Nginx http server.**
 
 
-### <a name="guide2">2 - Install Codefolio API locally
+## <a name="guide2">2 - Install Codefolio API locally
 
 - Go to the [Codefolio API](https://github.com/msmfsd/codefolio-api) repo on Github and follow the README file
 - Use Postman app or your browser to test the API on http://localhost:8080/
 
-### <a name="guide3">3 - Install Codefolio locally
+## <a name="guide3">3 - Install Codefolio locally
 
 - Go to the [Codefolio](https://github.com/msmfsd/codefolio) repo on Github and follow the README file
 - Open http://localhost:3000/ in your browser
 
-### <a name="guide4">4 - Edit your folio with Codefolio CMS
+## <a name="guide4">4 - Edit your folio with Codefolio CMS
 
 Once you have installed and configured your Codefolio API and your Codefolio then http://localhost:3000/ will display a dummy profile and no projects. To modify and create your folio follow these steps:
 
@@ -66,17 +66,17 @@ Once you have installed and configured your Codefolio API and your Codefolio the
 5. Now return to the admin dashboard and add some projects to showcase your work by clicking on the `CREATE NEW PROJECT` button in the projects area - add some screenshots, description, links and a code snippet for optimum display.
 6. Your created projects will appear in the admin dashboard and can be edited and deleted.
 
-### <a name="guide5">5 - Configure Codefolio API for production
+## <a name="guide5">5 - Configure Codefolio API for production
 
 ##### NODE ENV VARS
 When you installed your local Codefolio API project you would have renamed .env.example to .env and edited the variables to your environment. Your .env file will need to be uploaded to your production server so read the comments in the file and make sure all the values are correct.
 
-### <a name="guide6">6 - Configure Codefolio for production
+## <a name="guide6">6 - Configure Codefolio for production
 
 ##### CONFIG
 Before compiling a production build with ```npm run build```, ensure you have updated the root ***cf.config.js*** file with your API_KEY and production API_URL eg. http://my-prod-server.com:8080. They should match your API .env settings.
 
-### <a name="guide7">7 - Production server requirements
+## <a name="guide7">7 - Production server requirements
 
 The scope of this guide is currently limited to publishing your Codefolio to a single Linux Ubuntu server and we will install current versions of Apache, Node, NPM and Mongo. You could deploy to many types of servers in many different ways. To follow this guide exactly you will need:
 
@@ -85,7 +85,7 @@ The scope of this guide is currently limited to publishing your Codefolio to a s
 - Sudo user & ssh access
 - Domain name pointing to your server
 
-### <a name="guide8">8 - Publish your folio to production server (Linux)
+## <a name="guide8">8 - Publish your folio to production server (Linux)
 
 > TIP: For my production server I created an [AWS EC2](https://aws.amazon.com/ec2/) instance with an [AWS Route 53](https://aws.amazon.com/route53/) domain name connected to an [AWS Elastic IP](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html).
 
@@ -186,11 +186,11 @@ The scope of this guide is currently limited to publishing your Codefolio to a s
 28. To use the CMS remember to first register your administrator: ```http://my-prod-server.com/register```
 
 28. Finally edit your folio by logging in to the admin: ```http://my-prod-server.com/login```
-  
 
-### <a name="guide9">Technology credits
 
-A huge thanks to all the developers who built these awesome repos!
+## <a name="guide9">9 - Technology credits
+
+Codefolio is built with:
 
 ##### Codefolio API
 
