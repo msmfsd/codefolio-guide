@@ -10,7 +10,11 @@
  8. [Publish your folio to production server (Linux)](#guide8)
  9. [Technology credits](#guide9)
 
+---
+
 ## <a name="guide1">1 - Project overview
+###### Published: 11 Aug 2016
+
 Codefolio project is an open source build-your-own folio website & CMS for developers to showcase their skills and work. It is an online CV heavily skewed towards developers with features such as:
 
 #### [Codefolio API](https://github.com/msmfsd/codefolio-api)
@@ -43,7 +47,8 @@ The API and front-end application are separated for a few reasons:
 2. Faster page loading, security and best practice - [see this article](https://medium.com/@keithwhor/how-to-build-a-single-page-application-web-stack-that-works-the-baa-architecture-25c1ad941097#.b1pvnyigl).
 3. To showcase a CMS with an external API built with only Javascript.
 
-**To publish your folio to a production server you will need some experience with server admin. On steps 5 to 8 this guide documents deploying to a single Linux server with Node running on port 8080 and Apache running on default port 80. You could easily deploy to many other server configurations like publishing your API to a Heroku Node dyno and your static frontend to Nginx http server.**
+#### Can my folio be deployed to any server?
+To publish your folio to a production server you will need some experience with server admin. On steps 5 to 8 this guide documents deploying to a single Linux server with Node running on port 8080 and Apache running on default port 80. You could easily deploy to many other server configurations like publishing your API to a Heroku Node dyno and your static frontend to Nginx http server.
 
 
 ## <a name="guide2">2 - Install Codefolio API locally
