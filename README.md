@@ -102,11 +102,11 @@ The scope of this guide is currently limited to publishing your Codefolio to a s
 
   `$ sudo apt install apache2`
 
-4. Go your home user directory, mine is named ubuntu but for the rest of this guide we will call it username, make sure you insert your actual user folder name for these commands:
+4. Go your home user directory, mine is named ***ubuntu*** but for the rest of this guide we will call it ***yourusername***, make sure you insert your actual user folder name for these commands:
 
   `$ cd /home/yourusername`
 
-5. Clone or FTP your Codefolio API repo (here I am using the project repo on github so from here on our API directory will be called **codefolio-api**):
+5. Clone or FTP your Codefolio API (here I am using my Codefolio API repo on github so from here on my API directory will be called **codefolio-api**):
 
   `$ git clone https://github.com/msmfsd/codefolio-api.git`
 
@@ -124,7 +124,7 @@ The scope of this guide is currently limited to publishing your Codefolio to a s
 
   `$ sudo service mongod start`
 
-10. Move into your API directory:
+10. Move into your production server Codefolio API directory:
 
   `$ cd /home/yourusername/codefolio-api`
 
@@ -132,15 +132,15 @@ The scope of this guide is currently limited to publishing your Codefolio to a s
 
   `$ npm install`
 
-12. You could now just run **node server.js** to fire up the API though I highly recommend you install [pm2](http://pm2.keymetrics.io/docs/usage/quick-start/ "pm2") to manage that for us and ensure node is always running:
+12. You could now just run **node server.js** to fire up the API though I highly recommend you install [pm2](http://pm2.keymetrics.io/docs/usage/quick-start/ "pm2") to manage all that for us and ensure node is always running:
 
   `$ sudo npm install pm2@latest -g`
 
-13. Now tell pm2 to start the server, monitor it and restart it if needed:
+13. Now tell pm2 to start the server and then monitor it and restart it if needed:
 
   `$ pm2 startup`
 
-14. Test your API is up and running by loading your domain server + our Node port eg. http://my-prod-server.com:8080. It should return:
+14. Test your API is up and running by pointing your browser to your production servers Node port eg. http://my-prod-server.com:8080. It should return:
 
   `{"success":true,"message":"API"}`
 
@@ -154,7 +154,7 @@ The scope of this guide is currently limited to publishing your Codefolio to a s
 
 17. If you haven't already then create your Codefolio production build on your local machine by running `npm run build` - that will create a **dist** folder ready for deploying.
 
-18. Upload that entire ***dist*** folder via FTP or git to your production server's sites folder we just created. So the root folder for your Codefolio site will now be **/home/yourusername/sites/dist**
+18. Upload that entire ***dist*** folder via FTP or git to your production server's sites folder we just created. So the root folder for your static Codefolio site will now be **/home/yourusername/sites/dist**
 
 18. Now we need to point Apache to that location to serve the static files - usually it will be pointing to /var/www/html or some other directory. Open your Apache sites default config file:
 
@@ -217,20 +217,21 @@ Codefolio is built with:
 
 ##### Codefolio API
 
-- Node Js
-- Express Js
-- Passport Js
-- MongoDb
-- Mongoose
+- [Node Js](https://nodejs.org/)
+- [Express Js](http://expressjs.com/)
+- [Passport](http://passportjs.org/)
+- [MongoDb](http://www.mongodb.org/)
+- [Mongoose](http://mongoosejs.com/index.html)
 
 ##### Codefolio
 
-- React
-- Redux
-- React Router
-- Redux Form
-- React CSS Modules
-- PostCSS
-- Highlight Js
-- Materialize CSS
-- Webpack
+- [React](https://facebook.github.io/react/index.html)
+- [Redux](http://redux.js.org/)
+- [Materialize CSS](http://materializecss.com/)
+- [React Router](https://github.com/reactjs/react-router)
+- [Redux Form](http://redux-form.com/)
+- [React CSS Modules](https://github.com/gajus/react-css-modules)
+- [PostCSS](https://github.com/postcss/postcss)
+- [CSSNext](http://cssnext.io/)
+- [Highlight Js](https://highlightjs.org/)
+- [Webpack](http://webpack.github.io/)
