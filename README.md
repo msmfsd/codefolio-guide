@@ -13,7 +13,9 @@
 ---
 
 ## <a name="guide1">1 - Project overview
+
 ###### Published: 11 Aug 2016
+
 
 Codefolio project is an open source build-your-own folio website & CMS for developers to showcase their skills and work. It is an online CV heavily skewed towards developers with features such as:
 
@@ -37,7 +39,7 @@ Codefolio project is an open source build-your-own folio website & CMS for devel
  - Project technology chips
  - Project code snippet display
 
-> Codefolio & Codefolio API are seperate projects that connect with each other to create your developer folio. Codefolio is the static front-end website & CMS, built with React, that displays your folio to the public and allows you to login and edit it. Codefolio API is a RESTful API server, built with NodeJS and MongoDB, that performs CRUD operations on data requested by your Codefolio.
+> Codefolio & Codefolio API are seperate projects that connect with each other to create your developer folio. Codefolio is the static front-end website & CMS, built with React, that displays your folio to the public and allows you to login and edit it. Codefolio API is a RESTful API server, built with NodeJS and MongoDB, that performs CRUD operations on data requested by your Codefolio. [View Codefolio preview](https://goo.gl/photos/fqhDKEvH9RTejUzY9)
 
 #### Why have a seperate frontend and backend?
 
