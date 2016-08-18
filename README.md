@@ -63,6 +63,11 @@ To publish your folio to a production server you will need some experience with 
 - Go to the [Codefolio](https://github.com/msmfsd/codefolio) repo on Github and follow the README file
 - Open http://localhost:3000/ in your browser
 
+##### Customize
+- Feel free to customize the source code to suit your needs
+- View [Codefolio Documentation](https://doc.esdoc.org/github.com/msmfsd/codefolio/)
+- I recommend you install [Redux Devtools extension](https://github.com/zalmoxisus/redux-devtools-extension) to your browser
+
 ## <a name="guide4">4 - Edit your folio with Codefolio CMS
 
 Once you have installed and configured your Codefolio API and your Codefolio then [http://localhost:3000/](http://localhost:3000/) will display a dummy profile and no projects. To modify and create your folio follow these steps:
