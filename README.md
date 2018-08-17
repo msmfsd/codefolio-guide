@@ -177,13 +177,14 @@ The scope of this guide is currently limited to publishing your Codefolio to a s
   `DocumentRoot /home/yourusername/sites/dist`
 
 20. And second by pasting the following code before the closing VirtualHost tag:
-	```
+
+```
   <Directory /home/yourusername/sites/dist>
-	      Options Indexes FollowSymLinks MultiViews
-	      AllowOverride All
-	      Order allow,deny
-	      allow from all
-	</Directory>
+	Options Indexes FollowSymLinks MultiViews
+	AllowOverride All
+	Order allow,deny
+	allow from all
+</Directory>
   ```
 
 21. Save and close the config file.
@@ -196,11 +197,11 @@ The scope of this guide is currently limited to publishing your Codefolio to a s
 
   ```
   RewriteEngine on
-	RewriteBase /
-	RewriteRule ^index\.html$ - [L]
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteRule . /index.html [L]
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
   ```
 
 24.  Save and close the .htaccess file.
